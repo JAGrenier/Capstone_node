@@ -18,6 +18,11 @@ app.get("/api/v1/restaurants/:id", (req, res) => {
     console.log(req)
 })
 
+// create a restaurant 
+app.post("/api/v1/restaurants", (req, res) => {
+    console.log(req)
+})
+
 
 const port = process.env.PORT || 9000;
 
