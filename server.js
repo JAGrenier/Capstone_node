@@ -21,7 +21,7 @@ app.get("/api/v1/restaurants", (req, res) => {
 app.get("/api/v1/restaurants/:id", (req, res) => {
     console.log(req. params)
 
-    res.status(200).json()({
+    res.status(200).json({
         status: "success",
         data: {
             restaurant: ["Jenn's Bagels"]
@@ -32,7 +32,7 @@ app.get("/api/v1/restaurants/:id", (req, res) => {
 // create a restaurant 
 app.post("/api/v1/restaurants", (req, res) => {
     console.log(req.body);
-    res.status(201).json()({
+    res.status(201).json({
         status: "success",
         data: {
             restaurant: ["AJ's Bagels"]
@@ -44,14 +44,20 @@ app.post("/api/v1/restaurants", (req, res) => {
 app.put("/api/v1/restaurants/:id", (req, res) =>{
     console.log(req.params.id)
     console.log(req.body)
-    res.status(200).json()({
+    res.status(200).json({
         status: "success",
         data: {
-            restaurant: ["Jackiess Bagels"]
+            restaurant: ["Jackie's Bagels"]
         }
     })
 })
-
+// delete a restaurant 
+app.delete("/api/v1/restaurants/:id", (req, res) =>{
+    res.status(204).json({
+        status: "success"
+    })
+}
+)
 const port = process.env.PORT || 9000;
 
 app.listen(port, () => {
