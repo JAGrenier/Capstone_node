@@ -33,7 +33,7 @@ app.get(
     "/api/v1/restaurants/:id", 
     async (req, res) => {
     console.log(req.params.id)
-    try{
+    try{ 
         const restaurant = await db.query('SELECT * from restaurants left join (select restaurant_id, COUNT(*), TRUNC(AVG(rating),1) as average_rating from reviews group by restaurant_id) reviews on restaurants.id = reviews.restaurant_id where id = $1',
         [req.params.id,]);
         const reviews = await db.query('SELECT * from reviews where restaurant_id = $1', [
@@ -91,9 +91,10 @@ app.put("/api/v1/restaurants/:id", async (req, res) =>{
 // delete a restaurant not currently implemented 
 app.delete("/api/v1/restaurants/:id", async (req, res) =>{
     try{
-        const results = await db.query("DELETE FROM restaurants where id = $1", 
+        const results = await db.query("DELETE FROM reviews where restaurant_id = $1", 
         [req.params.id]
         );
+        console.log("here", req)
         res.status(204).json({
         status: "success"
     })
@@ -108,7 +109,7 @@ app.post("/api/v1/restaurants/:id/addReview", async(req, res) => {
         const newReview = await db.query(
             "INSERT INTO reviews (restaurant_id, name, disability, rating, review, image) values ($1, $2, $3, $4, $5, $6) returning *;" , 
         [req.params.id, req.body.name, req.body.disability, req.body.rating, req.body.review, req.body.image])
-        console.log(newReview)
+        console.log("name", req.body.name)
         res.status(201).json({
             status: 'success',
             data: {
