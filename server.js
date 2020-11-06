@@ -36,7 +36,7 @@ app.get(
     try{
         const restaurant = await db.query('SELECT * from restaurants left join (select restaurant_id, COUNT(*), TRUNC(AVG(rating),1) as average_rating from reviews group by restaurant_id) reviews on restaurants.id = reviews.restaurant_id where id = $1',
         [req.params.id,]);
-        const reviews = await db.query('select * from reviews where restaurant_id = $1', [
+        const reviews = await db.query('SELECT * from reviews where restaurant_id = $1', [
             req.params.id,
         ]);
             res.status(200).json({
@@ -103,6 +103,7 @@ app.delete("/api/v1/restaurants/:id", async (req, res) =>{
 })
 //add review
 app.post("/api/v1/restaurants/:id/addReview", async(req, res) => {
+    console.log(req.body)
     try{
         const newReview = await db.query(
             "INSERT INTO reviews (restaurant_id, name, disability, rating, review, image) values ($1, $2, $3, $4, $5, $6) returning *;" , 
