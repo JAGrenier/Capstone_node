@@ -11,9 +11,17 @@ Socially Accessible Denver is a full-stack web application designed for users wi
 
 
 ## Features
+### Auth 
+The application first directs users to a sign in page. This page was designed using Material Ui and the aut is set up with Firebase Authentication. Signing out will direct users back to the sign in page, and there is a link on the sign in page directing to a form to sign in as a new user.  
+### Embedded Map 
+The Map has a zoom to my location feature as an autocomplete search box. The search box will zoom to the location selected and only returns results in the Denver area. The map is created using the Google Javascript Maps API and the autocomplete is using the Google Places API. 
+### User Reviews 
+Once Logged in Users can view all locations with reviews, view reviews for a specific location, create a new review with an image.  
 
 ## Challenges
 With the target audience of this application, accessibility was an important goal. I faced some challenges with implementing an embedded map and meeting accessibility standards. To help me with this, I used the WAVE accessibility evaluation tool throughout the process. This tool helped me make smart choices about contrast, forms, and buttons. 
+
+Previous to this project I had not used Node.js or PostgreSQL. I was able to reference documentation through out the project to succesfully implement my back end. 
 
 ## Future Implementation
 * An admin login to allow for deleting and updating reviews as needed and track traffic 
@@ -21,6 +29,9 @@ With the target audience of this application, accessibility was an important goa
 * User profile page where they can favorite a location and track the reviews they have posted 
 
 ## Demo Video 
+[Demo Video with Audio](https://www.youtube.com/watch?v=81MHBvVuVqE&t=2s) 
+
+[Demo Video without Audio](https://www.youtube.com/watch?v=NZ8C9ButCNU&t=1s)
 
 ## Contact 
 You can find me on [LinkedIn](https://www.linkedin.com/in/jagrenier/)
