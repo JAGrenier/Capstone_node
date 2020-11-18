@@ -5,25 +5,25 @@ Socially Accessible Denver is a full-stack web application designed for users wi
 ## Technologies 
 **Front End:** React.js and Material Ui
 
-**Back End:** Node.js with Express, PostgreSQl
+**Back End:** Node.js with Express and PostgreSQl
 
-**API:** Google Places API, and Google Maps Javascript API.
+**API:** Google Places API and Google Maps Javascript API.
 
 
 ## Features
 ### Auth 
 ![Login, Logout, Signup](./GifsForReadMe/SignIn.gif)
 <br>
-The application first directs users to a sign in page. This page was designed using Material Ui and the aut is set up with Firebase Authentication. Signing out will direct users back to the sign in page, and there is a link on the sign in page directing to a form to sign in as a new user.  
+The application first directs users to a sign in page. This page was designed using Material Ui and the auth is set up with Firebase Authentication. Signing out will direct users back to the sign in page. There is a link on the sign in page directing user to a form to sign in as a new user.  
 
 ### Embedded Map 
 ![Map Features](./GifsForReadMe/MapFeatures.gif)
 <br> 
-The Map has a zoom to my location feature as an autocomplete search box. The search box will zoom to the location selected and only returns results in the Denver area. The map is created using the Google Javascript Maps API and the autocomplete is using the Google Places API. 
+The Map has a zoom to my location feature and an autocomplete search box. The search box will zoom to the location selected and only returns results in the Denver area. The map is created using the Google Javascript Maps API and the autocomplete uses the Google Places API. 
 ### User Reviews 
 ![ReviewFeature](./GifsForReadMe/Review.gif) 
 <br>
-Once Logged in Users can view all locations with reviews, view reviews for a specific location, create a new review with an image.  
+Once Logged in Users can view all locations with reviews, view reviews for a specific location, and create a new review with an image.  
 
 ## Challenges
 With the target audience of this application, accessibility was an important goal. I faced some challenges with implementing an embedded map and meeting accessibility standards. To help me with this, I used the WAVE accessibility evaluation tool throughout the process. This tool helped me make smart choices about contrast, forms, and buttons. 
